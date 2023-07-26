@@ -1,7 +1,12 @@
 require "sinatra"
 require "sinatra/reloader"
-require "sinatra/activerecord"
+require "./services/cats"
+
 
 get("/") do
-  erb(:cat_show)
+  @cat_lookup = Cats.lookup("url")
+
+  @cat_quotes = ["~Meow Meow Meow~", "nya~nya~", "HISSss", "Mrreyaaoooo", "mew"]
+
+  erb(:root)
 end
