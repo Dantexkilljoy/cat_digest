@@ -1,7 +1,7 @@
 <h1>~Meow Meow Meow~</h1>
-
-
-<img src="<%= @cat_lookup.first.dig("url") %>">
-
-<p><%= @cat_quotes.sample %></p>
-
+<div class="card" style="width: 20rem;">
+  <img src="<%= @cat_lookup.first.dig("url") %>" class="card-img-top" alt="cat_png">
+  <div class="card-body">
+    <p class="card-text"><%= @cat_quotes.sample %></p>
+  </div>
+</div>
