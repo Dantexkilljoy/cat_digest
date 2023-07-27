@@ -1,7 +1,40 @@
-<h1>~Meow Meow Meow~</h1>
-<div class="card" style="width: 20rem;">
-  <img src="<%= @cat_lookup.first.dig("url") %>" class="card-img-top" alt="cat_png">
-  <div class="card-body">
-    <p class="card-text"><%= @cat_quotes.sample %></p>
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">CATOGRAPHY</span>
+  </div>
+</nav>
+
+<form action="/" method="post">
+  <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+</form>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="d-flex justify-content-center">
+      <div class="card" style="width: 40rem;">
+        <div>
+          <h1>~Meow Meow Meow~</h1>
+        </div>
+        <img src="<%= @cat_lookup.first.dig("url") %>" class="card-img-top" alt="cat_png">
+
+        <div>
+          <button type="button" class="btn btn-info">Purrprise me!</button>
+        </div>
+      </div>
+  </div>
+</div>
+
+<%= @cows.speak %>
